@@ -23,13 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-okxan1cteenwr^+!8$iej&7nbd%e+s+z(2(0q1@1-9uc!8j5oh'
+# SECRET_KEY = 'django-insecure-okxan1cteenwr^+!8$iej&7nbd%e+s+z(2(0q1@1-9uc!8j5oh'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-okxan1cteenwr^+!8$iej&7nbd%e+s+z(2(0q1@1-9uc!8j5oh')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-gavriil1-thejubngoproje-6z00unfgh00.ws-eu101.gitpod.io', 'rb-django-todo-app-13-01c71d7e7f51.herokuapp.com', '8000-gavriil1-thejubngoproje-6z00unfgh00.ws-us102.gitpod.io']
-
+# ALLOWED_HOSTS = ['8000-gavriil1-thejubngoproje-6z00unfgh00.ws-eu101.gitpod.io', 'rb-django-todo-app-13-01c71d7e7f51.herokuapp.com', '8000-gavriil1-thejubngoproje-6z00unfgh00.ws-us102.gitpod.io']
+ALLOWED_HOSTS = ['8000-gavriil1-thejubngoproje-6z00unfgh00.ws-eu101.gitpod.io', os.environ.get('HEROKU_HOSTNAME'), '8000-gavriil1-thejubngoproje-6z00unfgh00.ws-us102.gitpod.io']
 
 # Application definition
 
